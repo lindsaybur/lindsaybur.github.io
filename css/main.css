@@ -23,11 +23,11 @@ margin: 30x 30px 30px 30px;
 /* Styles the lightbox, removes it from sight and adds the fade-in transition */
 
 .lightbox-target {
-position: float;
+position: absolute;
 top: 100%;
-width: 100%;
+width: 50%;
 background: rgba(0,0,0,.7);
-width: 100%;
+width: 50%;
 opacity: 0;
 -webkit-transition: opacity .5s ease-in-out;
 -moz-transition: opacity .5s ease-in-out;
