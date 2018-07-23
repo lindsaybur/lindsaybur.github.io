@@ -35,12 +35,16 @@
 	
 <body>
 	<style>
+.column {
+    float: left;
+    padding: 10px;
+}
 .left {
-    width: 50%;
+    width: 25%;
 }
 
 .right {
-    width: 50%;
+    width: 75%;
 }
 	</style>
 
@@ -48,13 +52,17 @@
   <div class="column left">
     <h2>Email</h2>
 	<img src="/images/emailicon2.png" alt="Logo" style="width:20%">
-    <p>Some text..</p>
   </div>
-  <div class="column right">
+  <div class="column left">
     <h2>Phone</h2>
 	  <img src="/images/phoneicon.png" alt="Logo" style="width:20%">
-    <p>Some text..</p>
   </div>
+<div class="column right">
+	<p>Some text..</p>
+	</div>
+<div class="column right">
+	<p>Some text..2</p>
+	</div>
 </div>
 	</body>
 </html>
