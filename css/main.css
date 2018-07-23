@@ -23,7 +23,7 @@ margin: 94px 20px 20px 20px;
 /* Styles the lightbox, removes it from sight and adds the fade-in transition */
 
 .lightbox-target {
-position: fixed;
+position: left;
 top: -100%;
 width: 100%;
 background: rgba(0,0,0,.7);
