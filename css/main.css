@@ -43,7 +43,7 @@ margin: auto;
 position: absolute;
 top: 0;
 left:0;
-right:10;
+right:0;
 bottom: 0;
 max-height: 0%;
 max-width: 0%;
@@ -118,8 +118,8 @@ bottom: 0;
 }
 
 .lightbox-target:target img {
-max-height: 75%;
-max-width: 75%;
+max-height: 50%;
+max-width: 50%;
 }
 
 .lightbox-target:target a.lightbox-close {
