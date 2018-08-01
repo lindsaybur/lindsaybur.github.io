@@ -118,7 +118,7 @@ bottom: 0;
 }
 
 .lightbox-target:target img {
-max-height: 80%;
+max-height: 90%;
 max-width: 75%;
 }
 
