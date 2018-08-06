@@ -11,12 +11,28 @@
 	body {
 	background-image: linear-gradient(AliceBlue, white);
 		</style>
+/* Container holding the image and the text */
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+/* Centered text */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+<div class="container">
 <nav>
-    		<ul>
-        		<center><li><a href="/">Home</a></li>
-	        	<li><a href="/Contact">Contact</a></li></center>
+    <ul>
+       <div class="centered"><li><a href="/">Home</a></li>
+	<li><a href="/Contact">Contact</a></li>
+	    </div>
 		</ul>
-		</nav>
+		  </nav>
+		    </div>
 		<div class="container" align="middle">
     		<div class="blurb" align="middle">
         		<h1>AIR Data Visualization Team</h1>
