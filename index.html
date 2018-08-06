@@ -20,136 +20,77 @@
 		</div><!-- /.blurb -->
 		</div><!-- /.container -->
 </head>
-			<style>
-* {
-    box-sizing: border-box;
-}
-.col1 {
-    width: 33.33%;
-    float: left;
-    padding: 15px;
-}
-.col2 {
-    width: 33.33%;
-    float: left;
-    padding: 15px;
-}
-.col3 {
-	width: 33.33%;
-	float: right;
-	padding: 15px;
-}
-body {
-	background-image: linear-gradient(AliceBlue, white);
-}
-	</style>
+			
 	<body>	
-<div class="col1">
-	<a class="lightbox" href="#CharterState">
-		 <div class="text-block"> 
-   		 <h4>Changes in Charter School Enrollment Over Time</h4>
-			 <p1>Animated Map Plot</p1>
-		 </div>
-		<img src="/images/charterState_ML.gif" alt="Charter" style="width:100%">
-		 </a>
-	<div class="lightbox-target" id="CharterState">
-		<img src="/images/charterState_ML.gif" alt="Charter" style="width:100%">
-		<a class="lightbox-close" href="#"></a>
+<!-- Images used to open the lightbox -->
+<div class="row">
+  <div class="column">
+    <img src="/images/charterState_ML.gif" onclick="openModal();currentSlide(1)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="/images/lineSchool_Revenue_ML.gif" onclick="openModal();currentSlide(2)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="/images/likert chart_YL.png" onclick="openModal();currentSlide(3)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src=""/images/ARTIC_JX.png" onclick="openModal();currentSlide(4)" class="hover-shadow">
+  </div>
 </div>
-	<a class="lightbox" href="#SchoolRevenue">
-		<div class="text-block"> 
-			<h4>Percentage of Revenue for Public Elementary and Secondary School Over Time </h4>
-			<p1>Animated Line Plot</p1>
-		 </div>
-		<img src="/images/lineSchool_Revenue_ML.gif" alt="Revenue" style="width:100%">
-		</a>
-	<div class="lightbox-target" id="SchoolRevenue">
-		<img src="/images/lineSchool_Revenue_ML.gif" alt="Revenue" style="width:100%">
-		<a class="lightbox-close" href="#"></a>
-</div>
-        <a class="lightbox" href="#Artic">
-		<div class="text-block"> 
-   		 <h4>Distribution of Scores of ARTIC Items</h4>
-			 <p1>Boxplot</p1>
-		 </div>
-		<img src="/images/ARTIC_JX.png" alt="Artic" style="width:100%">
-		</a>
-	<div class="lightbox-target" id="Artic">
-		<img src="/images/ARTIC_JX.png" alt="Artic" style="width:100%">
-		<a class="lightbox-close" href="#"></a>
-</div>
-		</div>
 
-<div class="col2">
-	<a class="lightbox" href="#Likert">
-		<div class="text-block"> 
-   		 <h4>Familiarity with Mathematical Concepts in Different Countries</h4>
-			<p1>Custom Barplot</p1>
-		 </div>
-	<img src="/images/likert chart_YL.png" style="width:100%; float:left">
-		</a>
-<div class="lightbox-target" id="Likert">
-	<img src="/images/likert chart_YL.png" style="width:100%">
-	<a class="lightbox-close" href="#"></a>
+<!-- The Modal/Lightbox -->
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="/images/charterState_ML.gif" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="/images/lineSchool_Revenue_ML.gif" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="/images/likert chart_YL.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="/images/ARTIC_JX.png" style="width:100%">
+    </div>
+
+    <!-- Next/previous controls -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <!-- Caption text -->
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+    <!-- Thumbnail image controls -->
+    <div class="column">
+      <img class="demo" src="/images/charterState_ML.gif" onclick="currentSlide(1)" alt="Nature">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="/images/lineSchool_Revenue_ML.gif" onclick="currentSlide(2)" alt="Snow">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="/images/likert chart_YL.png" onclick="currentSlide(3)" alt="Mountains">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="/images/ARTIC_JX.png" onclick="currentSlide(4)" alt="Lights">
+    </div>
+  </div>
 </div>
-	<a class="lightbox" href="#StateExpenditure">
-		<div class="text-block"> 
-   		 <h4>Per-Pupil Expenditure on Public Elementary and Secondary Education</h4>
-			<p1>Animated Barplot</p1>
-		 </div>
-		<img src="/images/barState_Expenditure_ML.gif" alt="Bar" style="width:100%">
-	</a>
-	<div class="lightbox-target" id="StateExpenditure">
-		<img src="/images/barState_Expenditure_ML.gif" alt="Bar" style="width:100%">
-		<a class="lightbox-close" href="#"></a>
-</div>
-	<a class="lightbox" href="#GradePlot">
-		<div class="text-block"> 
-   		 <h4>CLC Scores by Grade Over Time</h4>
-			<p1>Faceted Line Plot</p1>
-		 </div>
-		<img src="/images/Grade_plot_test_RS.png" alt="Grade" style="width:100%">
-		</a>
-	<div class="lightbox-target" id="GradePlot">
-		<img src="/images/Grade_plot_test_RS.png" alt="Grade" style="width:100%">
-		<a class="lightbox-close" href="#"></a>
-</div>
-</div>
-<div class="col3">
-	<a class="lightbox" href="#AnimatedLine">
-		<div class="text-block"> 
-   		 <h4>8th Grade Science Peformance Over Time</h4>
-			<p1>Animated Line Plot</p1>
-		 </div>
-		<img src="/images/animated line graph - 2_YL.gif" alt="Loading" style="width:100%">
-		</a>
-	<div class="lightbox-target" id="AnimatedLine">
-		<img src="/images/animated line graph - 2_YL.gif" alt="Loading" style="width:100%">
-		<a class="lightbox-close" href="#"></a>
-</div>
-	<a class="lightbox" href="#UrbanRegion">
-		<div class="text-block"> 
-			<h4>Familiarity with CHRR Data Sources by Region and Urbanicity</h4>
-			<p1>Faceted Stacked Barplot</p1>
-		 </div>
-		<img src="/images/urban_region.png" alt="Urban" style="width:100%">
-		</a>
-	<div class="lightbox-target" id="UrbanRegion">
-		<img src="/images/urban_region.png" alt="Urban" style="width:100%">
-		<a class="lightbox-close" href="#"></a>
-</div>
-	<a class="lightbox" href="#OverallRR">
-		<div class="text-block"> 
-   		 <h4>Overall Response Rate Over Time</h4>
-			<p1>Line Plot</p1>
-		 </div>
-		<img src="/images/overall_rr_plot_JX.png" alt="Overall" style="width:100%">
-		</a>
-	<div class="lightbox-target" id="OverallRR">
-		<img src="/images/overall_rr_plot_JX.png" alt="Overall" style="width:100%">
-		<a class="lightbox-close" href="#"></a>
-</div>
-</div>
+		
 		<footer>
     		<img src="/images/Banner4.PNG" alt="Banner" style="width:105%">
 		</footer>
