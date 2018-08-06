@@ -35,6 +35,7 @@ h4 {
     color: #333;
     padding: 0;
     margin: 0;
+    text-align: center;
 }
 p {
     font-size: 1.5em;
@@ -45,6 +46,7 @@ p1 {
     font-size: 1.3em;
     padding: 0;
     margin: 0;
+    text-align: center;
 }
 footer {
     border-top: 1px solid #d5d5d5;
