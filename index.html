@@ -7,151 +7,354 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
 		<img src="/images/Banner101.PNG" alt="Logo" style="width:105%">
+		 <style>
+	body {
+	background-image: linear-gradient(AliceBlue, white);
+		
+		</style>
 <nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/Contact">Contact</a></li>
+    <ul>
+       <center><li><a href="/">Home</a></li>
+	       <li><a href="/Contact">Contact</a></li></center>
 		</ul>
-		</nav>
+		  </nav>
 		<div class="container" align="middle">
     		<div class="blurb" align="middle">
         		<h1>AIR Data Visualization Team</h1>
 				<p>Examples of Data Visualization using the Ggplot2 Package in R</a></p>
 		</div><!-- /.blurb -->
 		</div><!-- /.container -->
+<hr>
 </head>
-			<style>
-* {
-    box-sizing: border-box;
-}
-.col1 {
-    width: 33.33%;
-    float: left;
-    padding: 15px;
-}
-.col2 {
-    width: 33.33%;
-    float: left;
-    padding: 15px;
-}
-.col3 {
-	width: 33.33%;
-	float: right;
-	padding: 15px;
-}
-body {
-	background-image: linear-gradient(AliceBlue, white);
-}
-	</style>
-	<body>	
-<div class="col1">
-	<a class="lightbox" href="#CharterState">
-		 <div class="text-block"> 
-   		 <h4>Changes in Charter School Enrollment Over Time</h4>
-			 <p1>Animated Map Plot</p1>
-		 </div>
-		<img src="/images/charterState_ML.gif" alt="Charter" style="width:100%">
-		 </a>
-	<div class="lightbox-target" id="CharterState">
-		<img src="/images/charterState_ML.gif" alt="Charter" style="width:100%">
-		<a class="lightbox-close" href="#"></a>
-</div>
-	<a class="lightbox" href="#SchoolRevenue">
-		<div class="text-block"> 
-			<h4>Percentage of Revenue for Public Elementary and Secondary School Over Time </h4>
-			<p1>Animated Line Plot</p1>
-		 </div>
-		<img src="/images/lineSchool_Revenue_ML.gif" alt="Revenue" style="width:100%">
-		</a>
-	<div class="lightbox-target" id="SchoolRevenue">
-		<img src="/images/lineSchool_Revenue_ML.gif" alt="Revenue" style="width:100%">
-		<a class="lightbox-close" href="#"></a>
-</div>
-        <a class="lightbox" href="#Artic">
-		<div class="text-block"> 
-   		 <h4>Distribution of Scores of ARTIC Items</h4>
-			 <p1>Boxplot</p1>
-		 </div>
-		<img src="/images/ARTIC_JX.png" alt="Artic" style="width:100%">
-		</a>
-	<div class="lightbox-target" id="Artic">
-		<img src="/images/ARTIC_JX.png" alt="Artic" style="width:100%">
-		<a class="lightbox-close" href="#"></a>
-</div>
-		</div>
 
-<div class="col2">
-	<a class="lightbox" href="#Likert">
-		<div class="text-block"> 
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  padding: 8px 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: black;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+</style>
+
+			
+	<body>	
+<!-- Images used to open the lightbox -->
+<div class="row">
+  <div class="column">
+	  <div class="text-block"> 
+   		 <h4>Changes in Charter School Enrollment Over Time</h4>
+		  <center><p1>Animated Map Plot</p1></center>
+		 </div>
+    <img src="/images/charterState_ML.gif" onclick="openModal();currentSlide(1)" class="hover-shadow" style="width:100%">
+  </div>
+	
+  <div class="column">
+	  <div class="text-block"> 
    		 <h4>Familiarity with Mathematical Concepts in Different Countries</h4>
-			<p1>Custom Barplot</p1>
+		  <center><p1>Custom Barplot</p1></center>
 		 </div>
-	<img src="/images/likert chart_YL.png" style="width:100%; float:left">
-		</a>
-<div class="lightbox-target" id="Likert">
-	<img src="/images/likert chart_YL.png" style="width:100%">
-	<a class="lightbox-close" href="#"></a>
+    <img src="/images/likert chart_YL.png" onclick="openModal();currentSlide(2)" class="hover-shadow" style="width:100%">
+  </div>
+
+<div class="column">	
+    <div class="text-block"> 
+		 <h4>8th Grade Science Peformance Over Time</h4>
+		 <center><p1>Animated Line Plot</p1></center>
+		 </div>
+    <img src="/images/animated line graph - 2_YL.gif" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width:100%">
 </div>
-	<a class="lightbox" href="#StateExpenditure">
-		<div class="text-block"> 
+</div>
+		
+<div class="row">		
+  <div class="column">
+	  <div class="text-block"> 
    		 <h4>Per-Pupil Expenditure on Public Elementary and Secondary Education</h4>
-			<p1>Animated Barplot</p1>
+		  <center><p1>Animated Barplot</p1></center>
 		 </div>
-		<img src="/images/barState_Expenditure_ML.gif" alt="Bar" style="width:100%">
-	</a>
-	<div class="lightbox-target" id="StateExpenditure">
-		<img src="/images/barState_Expenditure_ML.gif" alt="Bar" style="width:100%">
-		<a class="lightbox-close" href="#"></a>
-</div>
-	<a class="lightbox" href="#GradePlot">
-		<div class="text-block"> 
-   		 <h4>CLC Scores by Grade Over Time</h4>
-			<p1>Faceted Line Plot</p1>
-		 </div>
-		<img src="/images/Grade_plot_test_RS.png" alt="Grade" style="width:100%">
-		</a>
-	<div class="lightbox-target" id="GradePlot">
-		<img src="/images/Grade_plot_test_RS.png" alt="Grade" style="width:100%">
-		<a class="lightbox-close" href="#"></a>
-</div>
-</div>
-<div class="col3">
-	<a class="lightbox" href="#AnimatedLine">
-		<div class="text-block"> 
-   		 <h4>8th Grade Science Peformance Over Time</h4>
-			<p1>Animated Line Plot</p1>
-		 </div>
-		<img src="/images/animated line graph - 2_YL.gif" alt="Loading" style="width:100%">
-		</a>
-	<div class="lightbox-target" id="AnimatedLine">
-		<img src="/images/animated line graph - 2_YL.gif" alt="Loading" style="width:100%">
-		<a class="lightbox-close" href="#"></a>
-</div>
-	<a class="lightbox" href="#UrbanRegion">
-		<div class="text-block"> 
-			<h4>Familiarity with CHRR Data Sources by Region and Urbanicity</h4>
-			<p1>Faceted Stacked Barplot</p1>
-		 </div>
-		<img src="/images/urban_region.png" alt="Urban" style="width:100%">
-		</a>
-	<div class="lightbox-target" id="UrbanRegion">
-		<img src="/images/urban_region.png" alt="Urban" style="width:100%">
-		<a class="lightbox-close" href="#"></a>
-</div>
-	<a class="lightbox" href="#OverallRR">
-		<div class="text-block"> 
+    <img src="/images/barState_Expenditure_ML.gif" onclick="openModal();currentSlide(5)" class="hover-shadow" style="width:100%">
+  </div>
+<div class="column">
+	  <div class="text-block"> 
    		 <h4>Overall Response Rate Over Time</h4>
-			<p1>Line Plot</p1>
+		  <center><p1>Line Plot</p1></center>
 		 </div>
-		<img src="/images/overall_rr_plot_JX.png" alt="Overall" style="width:100%">
-		</a>
-	<div class="lightbox-target" id="OverallRR">
-		<img src="/images/overall_rr_plot_JX.png" alt="Overall" style="width:100%">
-		<a class="lightbox-close" href="#"></a>
+    <img src="/images/overall_rr_plot_JX.png" onclick="openModal();currentSlide(6)" class="hover-shadow" style="width:100%">
+  </div>	
+<div class="column">
+	  <div class="text-block"> 
+   		 <h4>Percentage of Revenue for Public Elementary and Secondary School Over Time</h4>
+		  <center><p1>Animated Line Plot</p1></center>
+		 </div>
+    <img src="/images/lineSchool_Revenue_ML.gif" onclick="openModal();currentSlide(9)" class="hover-shadow" style="width:100%">
+  </div>
 </div>
+
+<div class="row">
+  <div class="column">
+	  <div class="text-block"> 
+   		 <h4>Familiarity with CHRR Data Sources by Region and Urbanicity</h4>
+		  <center><p1>Faceted Stacked Barplot</p1></center>
+		 </div>
+    <img src="/images/urban_region.png" onclick="openModal();currentSlide(8)" class="hover-shadow" style="width:100%">
+  </div>
+  <div class="column">
+	  <div class="text-block"> 
+   		 <h4>Distribution of Scores of ARTIC Items</h4>
+		  <center><p1>Boxplot</p1></center>
+		  </div>
+    <img src="/images/ARTIC_JX.png" onclick="openModal();currentSlide(7)" class="hover-shadow" style="width:100%">
+  </div>
+  <div class="column">
+	  <div class="text-block"> 
+   		 <h4>CLC Scores by Grade Over Time</h4>
+		  <center><p1>Faceted Line Plot</p1></center>
+		  </div>
+    <img src="/images/Grade_plot_test_RS.png" onclick="openModal();currentSlide(4)" class="hover-shadow" style="width:100%">
+  </div>
 </div>
+
+		
+<!-- The Modal/Lightbox -->
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 9</div>
+      <img src="/images/charterState_ML.gif" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 9</div>
+      <img src="/images/likert chart_YL.png" style="width:100%">
+    </div>
+   
+   <div class="mySlides">
+      <div class="numbertext">3 / 9</div>
+      <img src="/images/animated line graph - 2_YL.gif" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">4 / 9</div>
+      <img src="/images/barState_Expenditure_ML.gif" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">5 / 9</div>
+      <img src="/images/overall_rr_plot_JX.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">6 / 9</div>
+      <img src="/images/lineSchool_Revenue_ML.gif" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">7 / 9</div>
+      <img src="/images/urban_region.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">8 / 9</div>
+      <img src="/images/ARTIC_JX.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">9 / 9</div>
+      <img src="/images/Grade_plot_test_RS.png" style="width:100%">
+    </div>
+
+    <!-- Next/previous controls -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <!-- Caption text -->
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+  </div>
+</div>
+		
 		<footer>
     		<img src="/images/Banner4.PNG" alt="Banner" style="width:105%">
 		</footer>
 	</body>
 </html>
+
+<script>
+// Open the Modal
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+// Close the Modal
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
